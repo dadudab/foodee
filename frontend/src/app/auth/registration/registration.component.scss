@@ -1,0 +1,27 @@
+.wrapper {
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.registration-wrapper {
+  background-color: #40454A;
+  padding: 10px;
+}
+
+.form-control {
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.form-actions {
+  margin-top: 25px;
+}
+
+.primary-btn {
+  width: 100%;
+}
+

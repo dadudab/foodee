@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="registration-wrapper">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="First name" formControlName="firstName">
+        <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+          <small *ngIf="firstName.errors?.['required']">First name is required</small>
+        </div> 
+      </div>
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="Last name" formControlName="lastName">
+        <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+          <small *ngIf="lastName.errors?.['required']">Last name is required</small>
+        </div> 
+      </div>
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="City" formControlName="city">
+        <div *ngIf="city?.invalid && (city?.dirty || city?.touched)">
+          <small *ngIf="city.errors?.['required']">City is required</small>
+        </div> 
+      </div>
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="Address" formControlName="address">
+        <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+          <small *ngIf="address.errors?.['required']">Address is required</small>
+        </div> 
+      </div>
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="Postal code" formControlName="postalCode">
+        <div *ngIf="postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)">
+          <small *ngIf="postalCode.errors?.['required']">Postal Code is required</small>
+        </div> 
+      </div>
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="Phone number" formControlName="phoneNumber">
+        <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)">
+          <small *ngIf="phoneNumber.errors?.['required']">Phone number is required</small>
+        </div> 
+      </div>
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="Email" formControlName="email">
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <small *ngIf="email.errors?.['required']">Email is required</small>
+        </div> 
+      </div>
+      <div class="form-control">
+        <input class="basic-input" type="text" placeholder="Password" formControlName="password">
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <small *ngIf="password.errors?.['required']">Password is required</small>
+        </div> 
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="primary-btn" [disabled]="!registrationForm.valid">Register</button>
+      </div>
+    </form>
+  </div>
+</div>

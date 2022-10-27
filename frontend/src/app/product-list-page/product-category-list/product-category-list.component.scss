@@ -1,0 +1,13 @@
+.categories-wrapper {
+  background-color: #40454A;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.category-form-control {
+  margin-top: 3px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

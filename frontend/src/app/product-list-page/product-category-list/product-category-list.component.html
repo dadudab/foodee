@@ -1,0 +1,8 @@
+<div class="categories-wrapper">
+  <form>
+    <div class="category-form-control" *ngFor="let category of productCategories">
+      <input id="{{category._id}}" type="checkbox" (change)="onCategoryChange(category)">
+      <label for="{{category._id}}">{{ category.name }}</label>
+    </div>
+  </form>
+</div>

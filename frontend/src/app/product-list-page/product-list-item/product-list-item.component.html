@@ -1,0 +1,24 @@
+<li class="product-item">
+  <div class="product-item-container">
+    <div class="image-wrapper">
+      <img class="product-image" src="https://cdn.galleries.smcloud.net/t/galleries/gf-cgdk-p5yy-aE4f_pizza-pepperoni-z-jalapeno-to-jadl-joe-biden-z-zolnierzami-w-rzeszowie-1920x1080-nocrop.jpg" alt="">
+    </div>
+    <div class="product-info-container">
+      <h2>{{ product.name }}</h2>
+      <ul class="ingredient-list">
+        <li 
+          *ngFor="let ingredient of product.basicIngredients"
+          class="ingredient-item" 
+        >
+          <span class="ingredient-name">{{ ingredient }}</span>
+        </li>
+      </ul>
+      <div class="product-actions">
+        <button class="primary-btn">Cart</button>
+        <div class="link-wrapper">
+          <a class="basic-link" href="#">Show</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
