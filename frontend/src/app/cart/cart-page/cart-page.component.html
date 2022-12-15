@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="container" *ngIf="cart">
+    <app-error-message [message]="error" *ngIf="error"></app-error-message>
+    <div class="cart-list-wrapper">
+      <app-cart-list [cartProducts]="cart.products"></app-cart-list>
+    </div>
+    <div class="cart-summary-wrapper">
+      <app-cart-summary [cart]="cart"></app-cart-summary>
+    </div>
+  </div>
+</div>

@@ -2,49 +2,57 @@
   <div class="registration-wrapper">
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="First name" formControlName="firstName">
+        <label class="basic-label" for="first-name">First Name</label>
+        <input id="first-name" class="basic-input" type="text" formControlName="firstName">
         <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
           <small *ngIf="firstName.errors?.['required']">First name is required</small>
         </div> 
       </div>
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="Last name" formControlName="lastName">
+        <label class="basic-label" for="last-name">Last Name</label>
+        <input id="last-name" class="basic-input" type="text" formControlName="lastName">
         <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
           <small *ngIf="lastName.errors?.['required']">Last name is required</small>
         </div> 
       </div>
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="City" formControlName="city">
+        <label class="basic-label" for="city">City</label>
+        <input id="city" class="basic-input" type="text" formControlName="city">
         <div *ngIf="city?.invalid && (city?.dirty || city?.touched)">
           <small *ngIf="city.errors?.['required']">City is required</small>
         </div> 
       </div>
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="Address" formControlName="address">
+        <label class="basic-label" for="address">Address</label>
+        <input id="address" class="basic-input" type="text" formControlName="address">
         <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
           <small *ngIf="address.errors?.['required']">Address is required</small>
         </div> 
       </div>
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="Postal code" formControlName="postalCode">
+        <label class="basic-label" for="postal-code">Postal Code</label>
+        <input id="postal-code" class="basic-input" type="text" formControlName="postalCode">
         <div *ngIf="postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)">
           <small *ngIf="postalCode.errors?.['required']">Postal Code is required</small>
         </div> 
       </div>
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="Phone number" formControlName="phoneNumber">
+        <label class="basic-label" for="phone-number">Phone Number</label>
+        <input id="phone-number" class="basic-input" type="text" formControlName="phoneNumber">
         <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)">
           <small *ngIf="phoneNumber.errors?.['required']">Phone number is required</small>
         </div> 
       </div>
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="Email" formControlName="email">
+        <label class="basic-label" for="email">Email</label>
+        <input id="email" class="basic-input" type="text" formControlName="email">
         <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
           <small *ngIf="email.errors?.['required']">Email is required</small>
         </div> 
       </div>
       <div class="form-control">
-        <input class="basic-input" type="text" placeholder="Password" formControlName="password">
+        <label class="basic-label" for="password">Password</label>
+        <input id="password" class="basic-input" type="password" formControlName="password">
         <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
           <small *ngIf="password.errors?.['required']">Password is required</small>
         </div> 

@@ -1,32 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
 // https://fonts.google.com/specimen/Nunito+Sans
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 html {
   box-sizing: border-box;
   font-size: 16px;
   letter-spacing: 1px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
   // letter-spacing: 1px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
   margin: 0;
   padding: 0;
   color: white;
 }
 
 body {
-  background-color: #343A40;
+  background-color: #343a40;
   // background-color: #202020;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -43,7 +53,7 @@ img {
   border: none;
   border-radius: 2px;
   letter-spacing: 1px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 800;
   cursor: pointer;
 
@@ -56,6 +66,11 @@ img {
 .basic-link {
   text-decoration: none;
   color: #ffffff;
+  cursor: pointer;
+}
+
+.basic-label {
+  font-size: 14px;
 }
 
 .basic-input {
@@ -63,12 +78,15 @@ img {
   height: 30px;
   outline: none;
   font-size: 16px;
-  background-color: #616568;
+  // background-color: #616568;
+  background-color: transparent;
   border: none;
+  border: 2px solid #616568;
   color: #ffffff;
   letter-spacing: 1px;
   border-radius: 2px;
   padding-left: 10px;
+  margin-top: 3px;
 
   &::placeholder {
     font-size: 16px;
@@ -78,4 +96,8 @@ img {
   &:focus {
     border: 2px solid #069a06;
   }
+}
+
+small {
+  color: #fd4a4a;
 }

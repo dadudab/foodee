@@ -1,0 +1,14 @@
+<div class="container">
+  <ul class="cart-item-list">
+    <app-cart-item
+      *ngFor="let product of cartProducts"
+      [cartItem]="product"
+    ></app-cart-item>
+  </ul>
+  <div class="no-products-container" *ngIf="cartProducts.length === 0">
+    <p class="no-products-label">No products in cart</p>
+    <a class="basic-link" routerLink="/menu"
+      >Go to menu and add some products</a
+    >
+  </div>
+</div>

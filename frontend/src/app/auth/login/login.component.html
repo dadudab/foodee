@@ -1,0 +1,41 @@
+<app-error-message *ngIf="error" [message]="error"></app-error-message>
+
+<div class="wrapper">
+  <div class="login-wrapper">
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+      <div class="form-control">
+        <label class="basic-label" for="email">Email</label>
+        <input
+          id="email"
+          class="basic-input"
+          type="text"
+          formControlName="email"
+        />
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <small *ngIf="email.errors?.['required']">Email is required</small>
+        </div>
+      </div>
+      <div class="form-control">
+        <label class="basic-label" for="password">Password</label>
+        <input
+          id="password"
+          class="basic-input"
+          type="password"
+          formControlName="password"
+        />
+        <div
+          *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+        >
+          <small *ngIf="password.errors?.['required']"
+            >Password is required</small
+          >
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="primary-btn" [disabled]="!loginForm.valid">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

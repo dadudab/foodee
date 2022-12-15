@@ -1,6 +1,9 @@
 <nav class="nav-bar-container">
   <div class="logo">FOODEE.</div>
-  <div class="nav-links-container" [ngClass]="{'sidebar-open': isSidebarOpen}">
+  <div
+    class="nav-links-container"
+    [ngClass]="{ 'sidebar-open': isSidebarOpen }"
+  >
     <ul class="nav-links-list">
       <li class="nav-link-wrapper">
         <a routerLink="/menu" class="nav-link">MENU</a>
@@ -15,16 +18,43 @@
         <a href="#" class="nav-link">CONTACT</a>
       </li>
     </ul>
-    <ul class="auth-nav-links-list">
+    <div class="cart-wrapper" (click)="onNavigateToCart()">
+      <div class="cart-container">
+        <img class="cart-icon" src="/assets/cart.png" alt="cart" />
+        <div class="cart-length-wrapper">
+          <span class="cart-length">{{ cartTotalQuantity }}</span>
+        </div>
+      </div>
+    </div>
+    <ul class="auth-nav-links-list" *ngIf="!isLoggedIn">
       <li class="nav-link-wrapper">
         <a routerLink="/registration" class="nav-link">REGISTER</a>
       </li>
       <li class="nav-link-wrapper">
-        <button class="primary-btn">LOGIN</button>
+        <button class="primary-btn" (click)="onNavigateToLogin()">LOGIN</button>
       </li>
     </ul>
+    <button
+      *ngIf="isLoggedIn"
+      (click)="onLogout()"
+      class="primary-btn logout-btn"
+    >
+      LOGOUT
+    </button>
   </div>
-  <div class="hamburger-wrapper" (click)="onToggleSidebar()" [ngClass]="{'hamburger-open': isSidebarOpen}">
+  <div class="cart-wrapper-mobile" (click)="onNavigateToCart()">
+    <div class="cart-container">
+      <img class="cart-icon" src="/assets/cart.png" alt="cart" />
+      <div class="cart-length-wrapper">
+        <span class="cart-length">{{ cartTotalQuantity }}</span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="hamburger-wrapper"
+    (click)="onToggleSidebar()"
+    [ngClass]="{ 'hamburger-open': isSidebarOpen }"
+  >
     <div class="hamburger-container">
       <div class="hamburger-line"></div>
       <div class="hamburger-line"></div>

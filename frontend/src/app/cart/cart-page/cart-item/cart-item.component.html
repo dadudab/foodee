@@ -1,0 +1,33 @@
+<li class="cart-item">
+  <div class="cart-item-container">
+    <div class="image-wrapper">
+      <img
+        src="https://ocdn.eu/pulscms-transforms/1/t8Ik9kpTURBXy9mOWIwN2U4NzI0Y2UwYjc2NzViMzY5MTAzZDFiZjc5Ny5qcGeTlQMAJ80E5s0CwZMFzQSwzQKkkwmmNmVkNjRmBt4AAaEwAQ/istock-669462222-mizina.jpg"
+        alt=""
+        class="image"
+      />
+    </div>
+    <div class="cart-item-content">
+      <h3 class="cart-item-name">{{ cartItem.name }}</h3>
+      <div class="quantity-price-container">
+        <div class="quantity-container">
+          <div
+            class="change-quantity-wrapper"
+            (click)="onRemoveProductFromCart()"
+          >
+            <span>-</span>
+          </div>
+          <div class="quantity-wrapper">
+            <span>{{ cartItem.quantity }}</span>
+          </div>
+          <div class="change-quantity-wrapper" (click)="onAddProductToCart()">
+            <span>+</span>
+          </div>
+        </div>
+        <div class="price-wrapper">
+          <span>{{ cartItem.price }}$</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>

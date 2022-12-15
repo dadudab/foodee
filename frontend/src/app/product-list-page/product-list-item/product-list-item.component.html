@@ -1,22 +1,30 @@
 <li class="product-item">
   <div class="product-item-container">
     <div class="image-wrapper">
-      <img class="product-image" src="https://cdn.galleries.smcloud.net/t/galleries/gf-cgdk-p5yy-aE4f_pizza-pepperoni-z-jalapeno-to-jadl-joe-biden-z-zolnierzami-w-rzeszowie-1920x1080-nocrop.jpg" alt="">
+      <img
+        class="product-image"
+        src="https://cdn.galleries.smcloud.net/t/galleries/gf-cgdk-p5yy-aE4f_pizza-pepperoni-z-jalapeno-to-jadl-joe-biden-z-zolnierzami-w-rzeszowie-1920x1080-nocrop.jpg"
+        alt=""
+      />
     </div>
     <div class="product-info-container">
-      <h2>{{ product.name }}</h2>
+      <div class="product-info-container-header">
+        <h2 class="product-name">{{ product.name }}</h2>
+        <h3 class="product-price">{{ product.price }}$</h3>
+      </div>
+
       <ul class="ingredient-list">
-        <li 
+        <li
           *ngFor="let ingredient of product.basicIngredients"
-          class="ingredient-item" 
+          class="ingredient-item"
         >
           <span class="ingredient-name">{{ ingredient }}</span>
         </li>
       </ul>
       <div class="product-actions">
-        <button class="primary-btn">Cart</button>
+        <button class="primary-btn" (click)="onAddProductToCart()">Cart</button>
         <div class="link-wrapper">
-          <a class="basic-link" href="#">Show</a>
+          <a class="basic-link" routerLink="/product/{{ product._id }}">Show</a>
         </div>
       </div>
     </div>

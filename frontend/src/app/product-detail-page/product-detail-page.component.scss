@@ -1,0 +1,103 @@
+.wrapper {
+  margin: 30px auto;
+  width: 90%;
+  background-color: #40454a;
+  max-width: 350px;
+}
+
+.product-container {
+  border-radius: 2px;
+}
+
+.product-content {
+  padding: 10px;
+}
+
+.image-wrapper {
+  width: 100%;
+  max-height: 250px;
+}
+
+.image {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.ingredient-list {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ingredient-item {
+  background-color: #7e7c7c;
+  border-radius: 2px;
+  padding: 1px 3px;
+}
+
+.ingredient-name {
+  font-size: 14px;
+}
+
+.description {
+  margin-top: 15px;
+  color: #b9b8b8;
+}
+
+.product-price {
+  margin-top: 10px;
+  color: #11df11;
+}
+
+.product-actions-container {
+  margin-top: 20px;
+}
+
+.full-btn {
+  width: 100%;
+}
+
+.link-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    max-width: 1000px;
+  }
+
+  .image-wrapper {
+    width: 50%;
+    max-height: none;
+    height: 500px;
+  }
+
+  .image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-content {
+    width: 50%;
+    padding: 20px;
+  }
+
+  .product-container {
+    width: 100%;
+    display: flex;
+  }
+
+  .description {
+    height: 250px;
+    // background-color: red;
+    overflow-y: scroll;
+  }
+
+  .product-actions-container {
+    margin-top: 45px;
+  }
+}

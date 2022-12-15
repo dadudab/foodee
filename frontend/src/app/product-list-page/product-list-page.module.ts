@@ -5,23 +5,16 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { ProductCategoryListComponent } from './product-category-list/product-category-list.component';
-
-
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
     ProductListPageComponent,
     ProductListComponent,
     ProductListItemComponent,
-    ProductCategoryListComponent
+    ProductCategoryListComponent,
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ],
-  exports: [
-    ProductListPageComponent,
-    ProductListComponent
-  ]
+  imports: [CommonModule, HttpClientModule, AppRoutingModule],
+  exports: [ProductListPageComponent, ProductListComponent],
 })
-export class ProductListPageModule { }
+export class ProductListPageModule {}

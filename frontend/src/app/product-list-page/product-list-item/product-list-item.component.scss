@@ -4,7 +4,7 @@
 }
 
 .product-item-container {
-  background-color: #40454A;
+  background-color: #40454a;
   // background-color: #707070;
   border-radius: 2px;
 }
@@ -43,7 +43,8 @@
   align-items: center;
 }
 
-.primary-btn, .link-wrapper {
+.primary-btn,
+.link-wrapper {
   width: 50%;
 }
 
@@ -56,4 +57,8 @@
   .product-item {
     margin-top: 0;
   }
+}
+
+.product-price {
+  color: #11df11;
 }

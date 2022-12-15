@@ -1,0 +1,52 @@
+<app-error-message [message]="error" *ngIf="error"></app-error-message>
+
+<div class="wrapper" *ngIf="product">
+  <div class="product-container">
+    <div class="image-wrapper">
+      <img
+        src="https://cdn.dribbble.com/users/357090/screenshots/8188171/dribbble_shot_hd_-_6_4x.jpg"
+        alt=""
+        class="image"
+      />
+    </div>
+    <div class="product-content">
+      <h2>{{ product.name }}</h2>
+      <ul class="ingredient-list">
+        <li
+          class="ingredient-item"
+          *ngFor="let ingredient of product.basicIngredients"
+        >
+          <span class="ingredient-name">{{ ingredient }}</span>
+        </li>
+      </ul>
+      <h3 class="product-price">{{ product.price }}$</h3>
+      <p class="description">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's standard dummy
+        text ever since the 1500s, when an unknown printer took a galley of type
+        and scrambled it to make a type specimen book. It has survived not only
+        five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release
+        of Letraset sheets containing Lorem Ipsum passages, and more recently
+        with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </p>
+      <div class="product-actions-container">
+        <button class="primary-btn full-btn" (click)="onAddToCart()">
+          Cart
+        </button>
+        <div class="link-wrapper">
+          <a class="basic-link" routerLink="/menu">Back to menu</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
