@@ -18,9 +18,14 @@
   max-height: 250px;
 }
 
+.product-name {
+  margin-top: 10px;
+}
+
 .image {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
+  height: 100%;
 }
 
 .ingredient-list {

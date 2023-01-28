@@ -1,0 +1,51 @@
+.wrapper {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.back-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: fit-content;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  margin-right: 5px;
+}
+
+.form-control {
+  margin-top: 10px;
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+select {
+  display: block;
+  margin-top: 3px;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.create-btn {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .create-btn {
+    width: auto;
+  }
+}
+
+.uploaded-image {
+  margin-top: 10px;
+}

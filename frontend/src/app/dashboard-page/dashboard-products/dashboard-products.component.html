@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Products</h1>
+    <div class="back-container" (click)="onNavigateBack()">
+      <img src="/assets/back-arrow.png" alt="" class="logo" />
+      <span>Back</span>
+    </div>
+    <div class="product-table-wrapper">
+      <table class="product-table">
+        <tr class="table-header">
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+        <tr *ngFor="let product of products">
+          <td>{{ product._id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <div class="actions-container">
+              <div
+                class="product-action action-update"
+                (click)="onUpdate(product._id)"
+              >
+                <img src="/assets/update.png" alt="" class="logo" />
+                <span class="action-name">Update</span>
+              </div>
+              <div
+                class="product-action action-delete"
+                (click)="onDelete(product._id)"
+              >
+                <img src="/assets/trash.png" alt="" class="logo" />
+                <span class="action-name">Delete</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

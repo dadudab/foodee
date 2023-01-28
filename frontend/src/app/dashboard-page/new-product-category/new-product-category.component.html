@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Create Product</h1>
+    <div class="back-container" (click)="onNavigateBack()">
+      <img src="/assets/back-arrow.png" alt="" class="logo" />
+      <span>Back</span>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="newCategoryForm" (submit)="onSubmit()">
+        <div class="form-control">
+          <label class="basic-label" for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            class="basic-input"
+            formControlName="name"
+          />
+          <small *ngIf="name.invalid && (name.dirty || name.touched)"
+            >Name is required</small
+          >
+        </div>
+        <div class="form-actions">
+          <button
+            [disabled]="!newCategoryForm.valid"
+            class="primary-btn create-btn"
+          >
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

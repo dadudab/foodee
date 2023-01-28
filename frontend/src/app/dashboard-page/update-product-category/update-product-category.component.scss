@@ -1,0 +1,53 @@
+.wrapper {
+  margin: 30px auto;
+  width: 90%;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.product-action {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-actions {
+  margin-top: 10px;
+}
+
+.action-name {
+  color: white;
+}
+
+.back-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.action-name {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .action-name {
+    display: flex;
+  }
+  .logo {
+    margin-right: 5px;
+  }
+}

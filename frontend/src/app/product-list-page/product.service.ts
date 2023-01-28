@@ -17,7 +17,9 @@ import {
   throwError,
 } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { NewProduct } from './new-product';
 import { Product } from './product';
+import { UpdatedProduct } from './updated-product';
 
 @Injectable({
   providedIn: 'root',
@@ -44,5 +46,33 @@ export class ProductService {
         return throwError(() => new Error('Product not found'));
       })
     );
+  }
+
+  createProduct(product: NewProduct): Observable<Product> {
+    return this.http.post<Product>(`${this.apiUrl}/products/new`, product).pipe(
+      catchError((error) => {
+        return throwError(() => new Error('Something went wrong'));
+      })
+    );
+  }
+
+  deleteProduct(productId: string): Observable<void> {
+    return this.http
+      .delete<void>(`${this.apiUrl}/products/${productId}/delete`)
+      .pipe(
+        catchError((error) => {
+          return throwError(() => new Error('Something went wrong'));
+        })
+      );
+  }
+
+  updateProduct(product: UpdatedProduct): Observable<Product> {
+    return this.http
+      .put<Product>(`${this.apiUrl}/products/${product._id}/update`, product)
+      .pipe(
+        catchError((error) => {
+          return throwError(() => new Error('Something went wrong'));
+        })
+      );
   }
 }

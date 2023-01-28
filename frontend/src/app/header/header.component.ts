@@ -14,6 +14,7 @@ import { CartService } from '../cart/cart.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   isSidebarOpen: boolean = false;
   isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
   userSub?: Subscription;
   cartSub?: Subscription;
   cartTotalQuantity: number = 0;
@@ -30,6 +31,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         switchMap((user: User | null) => {
           if (user) {
             this.isLoggedIn = !!user;
+            if (user.isAdmin) this.isAdmin = true;
           } else {
             this.isLoggedIn = false;
           }

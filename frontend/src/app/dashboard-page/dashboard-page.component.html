@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="dashboard-menu">
+      <ul class="dashboard-menu-list">
+        <li class="dashboard-menu-list-item">
+          <div class="menu-item" (click)="onNavigate('products')">
+            <img src="/assets/box.png" alt="" class="logo" />
+            <span class="name">Products</span>
+          </div>
+        </li>
+        <li class="dashboard-menu-list-item">
+          <div class="menu-item" (click)="onNavigate('products/new')">
+            <img src="/assets/box.png" alt="" class="logo" />
+            <span class="name">Create Product</span>
+          </div>
+        </li>
+        <li class="dashboard-menu-list-item">
+          <div class="menu-item" (click)="onNavigate('product-categories')">
+            <img src="/assets/box.png" alt="" class="logo" />
+            <span class="name">Product Categories</span>
+          </div>
+        </li>
+        <li class="dashboard-menu-list-item">
+          <div class="menu-item" (click)="onNavigate('product-categories/new')">
+            <img src="/assets/box.png" alt="" class="logo" />
+            <span class="name">New Product Category</span>
+          </div>
+        </li>
+        <li class="dashboard-menu-list-item">
+          <div class="menu-item">
+            <img src="/assets/box.png" alt="" class="logo" />
+            <span class="name">Orders</span>
+          </div>
+        </li>
+        <li class="dashboard-menu-list-item">
+          <div class="menu-item">
+            <img src="/assets/box.png" alt="" class="logo" />
+            <span class="name">Users</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Update Category</h1>
+    <div class="back-container" (click)="onNavigateBack()">
+      <img src="/assets/back-arrow.png" alt="" class="logo" />
+      <span>Back</span>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="updatedCategoryForm" (submit)="onSubmit()">
+        <div class="form-control" *ngIf="category">
+          <label class="basic-label" for="id">Id</label>
+          <input
+            id="id"
+            type="text"
+            class="basic-input"
+            disabled
+            value="{{ category._id }}"
+          />
+        </div>
+        <div class="form-control">
+          <label class="basic-label" for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            class="basic-input"
+            formControlName="name"
+          />
+          <small *ngIf="name.invalid && (name.dirty || name.touched)"
+            >Name is required</small
+          >
+        </div>
+        <div class="form-actions">
+          <button
+            [disabled]="!updatedCategoryForm.valid"
+            class="primary-btn create-btn"
+          >
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

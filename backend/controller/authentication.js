@@ -1,8 +1,8 @@
-const User = require('../model/user');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const Cart = require('../model/cart');
-const FavouriteProducts = require('../model/favouriteProducts');
+const User = require("../model/user");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const Cart = require("../model/cart");
+const FavouriteProducts = require("../model/favouriteProducts");
 
 module.exports.registerUser = async (req, res) => {
   const {
@@ -20,14 +20,14 @@ module.exports.registerUser = async (req, res) => {
     const foundUser = await User.findOne({ email });
     if (foundUser) {
       return res.status(409).json({
-        message: 'User already exists',
+        message: "User already exists",
       });
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
     if (!hashedPassword) {
       return res.status(500).json({
-        message: 'Something went wrong',
+        message: "Something went wrong",
       });
     }
 
@@ -61,7 +61,7 @@ module.exports.registerUser = async (req, res) => {
         user: newUser,
       },
       process.env.JWT_SECRET,
-      { expiresIn: '1h' }
+      { expiresIn: "1h" }
     );
 
     return res.status(200).json({
@@ -69,7 +69,7 @@ module.exports.registerUser = async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: 'Someting went wrong',
+      message: "Someting went wrong",
     });
   }
 };
@@ -81,7 +81,7 @@ module.exports.loginUser = async (req, res) => {
     const foundUser = await User.findOne({ email });
     if (!foundUser) {
       return res.status(404).json({
-        message: 'User not found',
+        message: "User not found",
       });
     }
 
@@ -91,7 +91,7 @@ module.exports.loginUser = async (req, res) => {
     );
     if (!isPasswordMatching) {
       return res.status(403).json({
-        message: 'Wrong password',
+        message: "Wrong password",
       });
     }
 
@@ -101,13 +101,13 @@ module.exports.loginUser = async (req, res) => {
         user: foundUser,
       },
       process.env.JWT_SECRET,
-      { expiresIn: '1h' }
+      { expiresIn: "1h" }
     );
 
     return res.status(200).json({ token });
   } catch (error) {
     return res.status(500).json({
-      message: 'Something went wrong',
+      message: "Something went wrong",
     });
   }
 };

@@ -1,3 +1,14 @@
 cart
 <a target="_blank" href="https://icons8.com/icon/CE7rP-35_XQR/shopping-cart">Shopping Cart</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
+box
+<a target="_blank" href="https://icons8.com/icon/5OyWFr4brw6I/open-box">Open Box</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+update
+<a target="_blank" href="https://icons8.com/icon/35635/available-updates">Available Updates</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+trash
+<a target="_blank" href="https://icons8.com/icon/OD5jprZTbcDK/delete-trash">Delete Trash</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+back arrow 
+<a target="_blank" href="https://icons8.com/icon/99287/back-arrow">Back Arrow</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

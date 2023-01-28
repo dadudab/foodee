@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { CartModule } from './cart/cart.module';
+import { DashboardPageModule } from './dashboard-page/dashboard-page.module';
 import { ErrorMessageModule } from './error-message/error-message.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductDetailPageModule } from './product-detail-page/product-detail-page.module';
@@ -22,6 +23,7 @@ import { ProductListPageModule } from './product-list-page/product-list-page.mod
     ErrorMessageModule,
     CartModule,
     ProductDetailPageModule,
+    DashboardPageModule,
   ],
   providers: [
     {

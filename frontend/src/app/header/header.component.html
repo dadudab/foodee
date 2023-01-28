@@ -17,6 +17,9 @@
       <li class="nav-link-wrapper">
         <a href="#" class="nav-link">CONTACT</a>
       </li>
+      <li *ngIf="isLoggedIn" class="nav-link-wrapper">
+        <a routerLink="/dashboard" class="nav-link">DASHBOARD</a>
+      </li>
     </ul>
     <div class="cart-wrapper" (click)="onNavigateToCart()">
       <div class="cart-container">

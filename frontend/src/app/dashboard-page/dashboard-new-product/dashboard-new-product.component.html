@@ -1,0 +1,103 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Create Product</h1>
+    <div class="back-container" (click)="onNavigateBack()">
+      <img src="/assets/back-arrow.png" alt="" class="logo" />
+      <span>Back</span>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="newProductForm" (submit)="onSubmit()">
+        <div class="form-control file-form-control">
+          <label for="image">Upload image</label>
+          <input
+            type="file"
+            id="image"
+            class="basic-file-input"
+            (change)="onFileUpload($event)"
+          />
+        </div>
+        <img
+          class="uploaded-image"
+          *ngIf="imageUrl"
+          src="{{ imageUrl }}"
+          alt=""
+        />
+
+        <div class="form-control">
+          <label class="basic-label" for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            class="basic-input"
+            formControlName="name"
+          />
+          <small *ngIf="name.invalid && (name.dirty || name.touched)"
+            >Name is required</small
+          >
+        </div>
+        <div class="form-control">
+          <label for="basic-label" for="price">Price</label>
+          <input
+            type="text"
+            id="price"
+            class="basic-input"
+            formControlName="price"
+          />
+          <small
+            *ngIf="price?.errors?.['required'] && (price.dirty || price.touched)"
+            >Price is required</small
+          >
+          <small
+            *ngIf="price?.errors?.['pattern'] && (price.dirty || price.touched)"
+            >Invalid price</small
+          >
+        </div>
+        <div class="form-control">
+          <label class="basic-label" for="description">Description</label>
+          <textarea
+            id="description"
+            cols="30"
+            rows="6"
+            formControlName="description"
+            class="basic-textbox"
+          ></textarea>
+          <small
+            *ngIf="
+              description.invalid && (description.dirty || description.touched)
+            "
+            >Description is required</small
+          >
+        </div>
+
+        <div class="form-control">
+          <label for="ingredient">Ingredients (seperate with ",")</label>
+          <input
+            type="text"
+            class="basic-input"
+            id="ingredient"
+            (input)="onInputChange($event)"
+          />
+        </div>
+
+        <div class="form-control" *ngIf="productCategories">
+          <label for="category">Category</label>
+          <select
+            id="category"
+            (change)="onChangeCategory($event)"
+            class="basic-input"
+          >
+            <option
+              *ngFor="let category of productCategories; index as i"
+              [value]="i"
+            >
+              {{ category.name }}
+            </option>
+          </select>
+        </div>
+        <div class="actions">
+          <button class="primary-btn create-btn" type="submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
