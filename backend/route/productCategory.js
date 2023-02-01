@@ -13,7 +13,8 @@ const router = express.Router();
 router.get("/product-category", getProductCategories);
 router.get(
   "/product-category/:categoryId",
-
+  isAuth,
+  isAdmin,
   getProductCategory
 );
 router.post("/product-category/new", isAuth, isAdmin, createProductCategory);

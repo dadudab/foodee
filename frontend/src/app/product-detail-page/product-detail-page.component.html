@@ -3,11 +3,7 @@
 <div class="wrapper" *ngIf="product">
   <div class="product-container">
     <div class="image-wrapper">
-      <img
-        src="https://cdn.dribbble.com/users/357090/screenshots/8188171/dribbble_shot_hd_-_6_4x.jpg"
-        alt=""
-        class="image"
-      />
+      <img src="{{ product.imageData.imageUrl }}" alt="" class="image" />
     </div>
     <div class="product-content">
       <h2 class="product-name">{{ product.name }}</h2>

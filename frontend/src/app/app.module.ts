@@ -12,9 +12,10 @@ import { ErrorMessageModule } from './error-message/error-message.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductDetailPageModule } from './product-detail-page/product-detail-page.module';
 import { ProductListPageModule } from './product-list-page/product-list-page.module';
+import { OrderSuccessPageComponent } from './order-success-page/order-success-page.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, OrderSuccessPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
