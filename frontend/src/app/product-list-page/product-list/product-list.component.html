@@ -1,8 +1,8 @@
 <div class="product-list-container">
   <ul class="product-list">
-    <app-product-list-item 
+    <app-product-list-item
       class="product-list-item"
-      *ngFor="let product of products"
+      *ngFor="let product of products | filter : selectedCategories"
       [product]="product"
     ></app-product-list-item>
   </ul>

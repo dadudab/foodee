@@ -1,7 +1,7 @@
 .wrapper {
   width: 90%;
   margin: 30px auto;
-  max-width: 30rem;
+  max-width: 20rem;
 }
 
 .dashboard-menu-list {
@@ -33,13 +33,15 @@
   border-radius: 2px;
   padding: 5px;
   color: #ffffff;
-  background-color: #5d646b;
+  background-color: #40454a;
   font-size: 17px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   padding: 17px 0;
+  padding-left: 10px;
+  z-index: 1;
 }
 
 .name {

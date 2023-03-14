@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { catchError, map, of, throwError } from 'rxjs';
 import { AuthService } from '../auth.service';
 
@@ -15,7 +16,11 @@ export class LoginComponent {
     password: ['', [Validators.required]],
   });
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   onSubmit() {
     if (!this.loginForm.valid) return;
@@ -32,7 +37,9 @@ export class LoginComponent {
             return of();
           })
         )
-        .subscribe();
+        .subscribe(() => {
+          this.router.navigate(['/menu']);
+        });
     }
   }
 

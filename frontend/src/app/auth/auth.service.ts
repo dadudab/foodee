@@ -9,7 +9,7 @@ import {
   throwError,
 } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { User } from './user';
+import { User, UserRegistrationData } from './user';
 import jwtDecode from 'jwt-decode';
 import { CartService } from '../cart/cart.service';
 
@@ -138,4 +138,21 @@ export class AuthService {
   //     return user?.token;
   //   })
   // }
+  registerUser(
+    user: UserRegistrationData
+  ): Observable<HttpResponse<AuthResponse>> {
+    return this.http
+      .post<AuthResponse>(`${this.apiUrl}/auth/register`, user, {
+        observe: 'response',
+      })
+      .pipe(
+        map((res: HttpResponse<AuthResponse>) => {
+          if (res.body) this.handleAuthentication(res.body.token);
+          return res;
+        }),
+        catchError((error) => {
+          return throwError(() => new Error(error.error.message));
+        })
+      );
+  }
 }

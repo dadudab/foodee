@@ -1,5 +1,5 @@
-const Cart = require('../model/cart');
-const Product = require('../model/product');
+const Cart = require("../model/cart");
+const Product = require("../model/product");
 
 module.exports.getCart = async (req, res) => {
   const userId = req.user._id.toString();
@@ -8,14 +8,14 @@ module.exports.getCart = async (req, res) => {
     const foundCart = await Cart.findOne({ userId });
     if (!foundCart) {
       return res.status(404).json({
-        message: 'Cart not found',
+        message: "Cart not found",
       });
     }
 
     return res.status(200).json(foundCart);
   } catch (error) {
     return res.status(500).json({
-      message: 'Something went wrong',
+      message: "Something went wrong",
     });
   }
 };
@@ -32,14 +32,14 @@ module.exports.addProductToCart = async (req, res) => {
     });
     if (!foundCart) {
       return res.status(404).json({
-        message: 'Cart not found',
+        message: "Cart not found",
       });
     }
 
     const foundProduct = await Product.findById(productId);
     if (!foundProduct) {
       return res.status(404).json({
-        message: 'Product not found',
+        message: "Product not found",
       });
     }
 
@@ -55,6 +55,7 @@ module.exports.addProductToCart = async (req, res) => {
         name: foundProduct.name,
         price: foundProduct.price,
         quantity: parseInt(quantity),
+        imageUrl: foundProduct.imageData.imageUrl,
       };
 
       const updatedTotalPrice =
@@ -63,9 +64,6 @@ module.exports.addProductToCart = async (req, res) => {
 
       updatedCartProducts = foundCart.products;
       updatedCartProducts.push(newCartProduct);
-      console.log(updatedTotalPrice);
-      console.log(quantity);
-      console.log(foundProduct.price);
 
       const updatedCart = {
         products: updatedCartProducts,
@@ -112,7 +110,7 @@ module.exports.addProductToCart = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: 'Something went wrong',
+      message: "Something went wrong",
     });
   }
 };
@@ -128,14 +126,14 @@ module.exports.removeProductFromCart = async (req, res) => {
     const foundProduct = await Product.findById(productId);
     if (!foundProduct) {
       return res.status(404).json({
-        message: 'Product not found',
+        message: "Product not found",
       });
     }
 
     const foundCart = await Cart.findOne({ userId: req.user._id.toString() });
     if (!foundCart) {
       return res.status(404).json({
-        message: 'Cart not found',
+        message: "Cart not found",
       });
     }
 
@@ -183,6 +181,7 @@ module.exports.removeProductFromCart = async (req, res) => {
           name: existingCartProduct.name,
           price: existingCartProduct.price,
           quantity: existingCartProduct.quantity - parseInt(quantity),
+          imageUrl: existingCartProduct.imageUrl,
         };
         const updatedCartProducts = [...foundCart.products];
         updatedCartProducts[existingCartProductIndex] = updatedProduct;
@@ -207,7 +206,7 @@ module.exports.removeProductFromCart = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: 'Something went wrong',
+      message: "Something went wrong",
     });
   }
 };

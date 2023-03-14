@@ -1,4 +1,10 @@
 <div class="wrapper">
-  <app-product-category-list class="category-list"></app-product-category-list>
-  <app-product-list class="product-list"></app-product-list>
+  <app-product-category-list
+    (selectedProductCategoriesEvent)="receiveSelectedProductCategories($event)"
+    class="category-list"
+  ></app-product-category-list>
+  <app-product-list
+    class="product-list"
+    [selectedCategories]="selectedCategories"
+  ></app-product-list>
 </div>

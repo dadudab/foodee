@@ -102,7 +102,7 @@ export class DashboardUpdateProductComponent implements OnInit {
 
   onInputChange(event: any): void {
     this.ingredient = event.target.value;
-    this.basicIngredients.setValue(this.ingredient.split(', '));
+    this.basicIngredients.setValue(this.ingredient.split(','));
   }
 
   onFileUpload(event: any): void {
@@ -115,16 +115,15 @@ export class DashboardUpdateProductComponent implements OnInit {
   }
 
   convertIngredients(ingredients: string[]): string[] {
-    const convertedIngredients = [];
-    for (let ingredient of ingredients) {
-      if (ingredient[0]) convertedIngredients.push(' ' + ingredient);
-    }
+    const convertedIngredients: string[] = [];
+    // for (let ingredient of ingredients) {
+    //   if (ingredient[0]) convertedIngredients.push(' ' + ingredient);
+    // }
+    ingredients.map((ingredient) => convertedIngredients.push(ingredient));
     return convertedIngredients;
   }
 
   onSubmit(): void {
-    console.log(this.updateProductForm.valid);
-    console.log(this.updateProductForm.value);
     if (!this.updateProductForm.valid) return;
     this.productService
       .updateProduct(this.getUpdatedProductData(this.updateProductForm))

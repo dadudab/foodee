@@ -1,64 +1,138 @@
+<app-error-message [message]="error" *ngIf="error"></app-error-message>
+
 <div class="wrapper">
   <div class="registration-wrapper">
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
       <div class="form-control">
         <label class="basic-label" for="first-name">First Name</label>
-        <input id="first-name" class="basic-input" type="text" formControlName="firstName">
-        <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
-          <small *ngIf="firstName.errors?.['required']">First name is required</small>
-        </div> 
+        <input
+          id="first-name"
+          class="basic-input"
+          type="text"
+          formControlName="firstName"
+        />
+        <div
+          *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)"
+        >
+          <small *ngIf="firstName.errors?.['required']"
+            >First name is required</small
+          >
+        </div>
       </div>
       <div class="form-control">
         <label class="basic-label" for="last-name">Last Name</label>
-        <input id="last-name" class="basic-input" type="text" formControlName="lastName">
-        <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
-          <small *ngIf="lastName.errors?.['required']">Last name is required</small>
-        </div> 
+        <input
+          id="last-name"
+          class="basic-input"
+          type="text"
+          formControlName="lastName"
+        />
+        <div
+          *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)"
+        >
+          <small *ngIf="lastName.errors?.['required']"
+            >Last name is required</small
+          >
+        </div>
       </div>
       <div class="form-control">
         <label class="basic-label" for="city">City</label>
-        <input id="city" class="basic-input" type="text" formControlName="city">
+        <input
+          id="city"
+          class="basic-input"
+          type="text"
+          formControlName="city"
+        />
         <div *ngIf="city?.invalid && (city?.dirty || city?.touched)">
           <small *ngIf="city.errors?.['required']">City is required</small>
-        </div> 
+        </div>
       </div>
       <div class="form-control">
         <label class="basic-label" for="address">Address</label>
-        <input id="address" class="basic-input" type="text" formControlName="address">
+        <input
+          id="address"
+          class="basic-input"
+          type="text"
+          formControlName="address"
+        />
         <div *ngIf="address?.invalid && (address?.dirty || address?.touched)">
-          <small *ngIf="address.errors?.['required']">Address is required</small>
-        </div> 
+          <small *ngIf="address.errors?.['required']"
+            >Address is required</small
+          >
+        </div>
       </div>
       <div class="form-control">
         <label class="basic-label" for="postal-code">Postal Code</label>
-        <input id="postal-code" class="basic-input" type="text" formControlName="postalCode">
-        <div *ngIf="postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)">
-          <small *ngIf="postalCode.errors?.['required']">Postal Code is required</small>
-        </div> 
+        <input
+          id="postal-code"
+          class="basic-input"
+          type="text"
+          formControlName="postalCode"
+        />
+        <div
+          *ngIf="
+            postalCode?.invalid && (postalCode?.dirty || postalCode?.touched)
+          "
+        >
+          <small *ngIf="postalCode.errors?.['required']"
+            >Postal Code is required</small
+          >
+        </div>
       </div>
       <div class="form-control">
         <label class="basic-label" for="phone-number">Phone Number</label>
-        <input id="phone-number" class="basic-input" type="text" formControlName="phoneNumber">
-        <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)">
-          <small *ngIf="phoneNumber.errors?.['required']">Phone number is required</small>
-        </div> 
+        <input
+          id="phone-number"
+          class="basic-input"
+          type="text"
+          formControlName="phoneNumber"
+        />
+        <div
+          *ngIf="
+            phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)
+          "
+        >
+          <small *ngIf="phoneNumber.errors?.['required']"
+            >Phone number is required</small
+          >
+        </div>
       </div>
       <div class="form-control">
         <label class="basic-label" for="email">Email</label>
-        <input id="email" class="basic-input" type="text" formControlName="email">
+        <input
+          id="email"
+          class="basic-input"
+          type="text"
+          formControlName="email"
+        />
         <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
           <small *ngIf="email.errors?.['required']">Email is required</small>
-        </div> 
+        </div>
       </div>
       <div class="form-control">
         <label class="basic-label" for="password">Password</label>
-        <input id="password" class="basic-input" type="password" formControlName="password">
-        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
-          <small *ngIf="password.errors?.['required']">Password is required</small>
-        </div> 
+        <input
+          id="password"
+          class="basic-input"
+          type="password"
+          formControlName="password"
+        />
+        <div
+          *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+        >
+          <small *ngIf="password.errors?.['required']"
+            >Password is required</small
+          >
+        </div>
       </div>
       <div class="form-actions">
-        <button type="submit" class="primary-btn" [disabled]="!registrationForm.valid">Register</button>
+        <button
+          type="submit"
+          class="primary-btn"
+          [disabled]="!registrationForm.valid"
+        >
+          Register
+        </button>
       </div>
     </form>
   </div>

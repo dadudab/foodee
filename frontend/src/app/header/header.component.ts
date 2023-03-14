@@ -39,7 +39,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         }),
         map((cart) => {
           this.cartTotalQuantity = cart.totalQuantity;
-          console.log(cart);
         })
       )
       .subscribe();

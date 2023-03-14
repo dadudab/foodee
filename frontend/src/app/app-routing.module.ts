@@ -71,6 +71,11 @@ const routes: Routes = [
     component: UpdateProductCategoryComponent,
     canActivate: [AdminGuard],
   },
+  {
+    path: '**',
+    redirectTo: '/menu',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
