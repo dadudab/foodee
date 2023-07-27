@@ -1,0 +1,18 @@
+.wrapper {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.product-list-wrapper {
+  margin-top: 20px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  gap: 20px;
+}
+
+.product-list-item {
+  justify-self: center;
+}

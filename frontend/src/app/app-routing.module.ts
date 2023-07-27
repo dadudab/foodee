@@ -14,6 +14,7 @@ import { ProductCategoriesComponent } from './dashboard-page/product-categories/
 import { UpdateProductCategoryComponent } from './dashboard-page/update-product-category/update-product-category.component';
 import { ProductDetailPageComponent } from './product-detail-page/product-detail-page.component';
 import { ProductListPageComponent } from './product-list-page/product-list-page.component';
+import { FavouritesPageComponent } from './favourites-page/favourites-page.component';
 
 const routes: Routes = [
   {
@@ -70,6 +71,10 @@ const routes: Routes = [
     path: 'dashboard/product-categories/:categoryId/update',
     component: UpdateProductCategoryComponent,
     canActivate: [AdminGuard],
+  },
+  {
+    path: 'favourites',
+    component: FavouritesPageComponent,
   },
   {
     path: '**',

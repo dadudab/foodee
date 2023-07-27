@@ -17,6 +17,10 @@ import { FilterPipe } from './filter.pipe';
     FilterPipe,
   ],
   imports: [CommonModule, HttpClientModule, AppRoutingModule],
-  exports: [ProductListPageComponent, ProductListComponent],
+  exports: [
+    ProductListPageComponent,
+    ProductListComponent,
+    ProductListItemComponent,
+  ],
 })
 export class ProductListPageModule {}

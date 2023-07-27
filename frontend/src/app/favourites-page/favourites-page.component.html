@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <h2>Your favourites</h2>
+  <div class="product-list-wrapper">
+    <ul class="product-list">
+      <app-product-list-item
+        class="product-list-item"
+        *ngFor="let product of favProducts"
+        [product]="product"
+      ></app-product-list-item>
+    </ul>
+  </div>
+  <div *ngIf="favProducts.length === 0">No products</div>
+</div>

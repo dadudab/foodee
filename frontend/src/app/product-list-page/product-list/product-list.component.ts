@@ -3,6 +3,7 @@ import { catchError, map, of, tap } from 'rxjs';
 import { Product } from '../product';
 import { ProductCategory } from '../product-category-list/productCategory';
 import { ProductService } from '../product.service';
+import { FavouriteServiceService } from 'src/app/favourites-page/favourite-service.service';
 
 @Component({
   selector: 'app-product-list',

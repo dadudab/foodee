@@ -12,3 +12,9 @@ trash
 
 back arrow 
 <a target="_blank" href="https://icons8.com/icon/99287/back-arrow">Back Arrow</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+green hearth
+<a target="_blank" href="https://icons8.com/icon/37975/love">Favourite</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+empty hearth
+<a target="_blank" href="https://icons8.com/icon/581/favorite">Favourite</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

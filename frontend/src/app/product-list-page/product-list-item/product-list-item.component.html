@@ -6,6 +6,20 @@
         src="{{ product.imageData.imageUrl }}"
         alt=""
       />
+      <img
+        *ngIf="isFavourite"
+        class="hearth"
+        src="/assets/hearth-green.png"
+        alt=""
+        (click)="onRemoveFromFavourite()"
+      />
+      <img
+        *ngIf="!isFavourite"
+        class="hearth"
+        src="/assets/hearth-empty.png"
+        alt=""
+        (click)="onAddToFavourite()"
+      />
     </div>
     <div class="product-info-container">
       <div class="product-info-container-header">
