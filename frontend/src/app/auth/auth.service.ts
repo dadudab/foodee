@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { User, UserRegistrationData } from './user';
 import jwtDecode from 'jwt-decode';
 import { CartService } from '../cart/cart.service';
+import { Router } from '@angular/router';
 
 export interface AuthResponse {
   token: string;
@@ -31,7 +32,11 @@ export class AuthService {
   user: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
   logoutTimer?: ReturnType<typeof setTimeout>;
 
-  constructor(private http: HttpClient, private cartService: CartService) {}
+  constructor(
+    private http: HttpClient,
+    private cartService: CartService,
+    private router: Router
+  ) {}
 
   loginUser(email: string, password: string): Observable<AuthResponse> {
     return this.http
@@ -130,7 +135,7 @@ export class AuthService {
     this.user.next(null);
     this.cartService.setEmptyCart();
     if (this.logoutTimer) clearTimeout(this.logoutTimer);
-    console.log('logged user');
+    this.router.navigate(['/menu']);
   }
 
   // getToken(): string {

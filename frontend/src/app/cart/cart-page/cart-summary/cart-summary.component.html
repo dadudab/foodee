@@ -15,6 +15,8 @@
       <span class="total-title">Total: </span>
       <span class="total-value">{{ cart.totalPrice.toFixed(2) }}$</span>
     </div>
+    <button class="primary-btn cash">Pay with cash</button>
+    <button (click)="onTestOrder()">test order</button>
     <div class="paypal-wrapper">
       <div #paypal></div>
     </div>

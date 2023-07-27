@@ -53,4 +53,13 @@ export class CartSummaryComponent implements OnInit {
       })
       .render(this.paypalElement.nativeElement);
   }
+
+  onTestOrder(): void {
+    this.orderService.createOrder().subscribe();
+    this.cartService.cart.next({
+      products: [],
+      totalPrice: 0,
+      totalQuantity: 0,
+    });
+  }
 }
