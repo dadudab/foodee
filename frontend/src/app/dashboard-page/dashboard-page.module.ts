@@ -9,6 +9,10 @@ import { ProductCategoriesComponent } from './product-categories/product-categor
 import { NewProductCategoryComponent } from './new-product-category/new-product-category.component';
 import { DashboardUpdateProductComponent } from './dashboard-update-product/dashboard-update-product.component';
 import { UpdateProductCategoryComponent } from './update-product-category/update-product-category.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderListComponent } from './orders/order-list/order-list.component';
+import { OrderListItemComponent } from './orders/order-list/order-list-item/order-list-item.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { UpdateProductCategoryComponent } from './update-product-category/update
     NewProductCategoryComponent,
     DashboardUpdateProductComponent,
     UpdateProductCategoryComponent,
+    OrdersComponent,
+    OrderListComponent,
+    OrderListItemComponent,
+    MyOrdersComponent,
   ],
   imports: [CommonModule, AppRoutingModule, ReactiveFormsModule],
 })

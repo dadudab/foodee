@@ -54,7 +54,7 @@ export class CartSummaryComponent implements OnInit {
       .render(this.paypalElement.nativeElement);
   }
 
-  onTestOrder(): void {
+  onCashPayment(): void {
     this.orderService.createOrder().subscribe();
     this.cartService.cart.next({
       products: [],

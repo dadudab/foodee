@@ -1,0 +1,45 @@
+<li class="wrapper">
+  <div class="container">
+    <h3><span class="text-secondary">ID:</span> {{ order._id }}</h3>
+    <p>
+      <span class="text-secondary">Ordered:</span> {{ order.timestamp | date }}
+    </p>
+    <p>
+      <span class="text-secondary">Name:</span> {{ order.user.firstName }}
+      {{ order.user.lastName }}
+    </p>
+    <p>
+      <span class="text-secondary">Address:</span> {{ order.user.city }},
+      {{ order.user.address }} {{ order.user.postalCode }}
+    </p>
+    <p>
+      <span class="text-secondary">Phone number:</span>
+      {{ order.user.phoneNumber }}
+    </p>
+    <p>
+      <span class="text-secondary">Email:</span>
+      {{ order.user.email }}
+    </p>
+    <h4 class="primary-color">Products</h4>
+    <ul class="ordered-product-list">
+      <li *ngFor="let product of order.products">
+        <p><span class="text-secondary">ID:</span> {{ product.productId }}</p>
+        <p><span class="text-secondary">Name:</span> {{ product.name }}</p>
+        <p><span class="text-secondary">Price:</span> {{ product.price }}</p>
+        <p>
+          <span class="text-secondary">Quantity:</span> {{ product.quantity }}
+        </p>
+      </li>
+    </ul>
+    <div class="summary-container">
+      <div>
+        <span class="primary-color">Total quantity:</span>
+        {{ order.totalQuantity }}
+      </div>
+      <div>
+        <span class="primary-color">Total price:</span>
+        {{ order.totalPrice | currency }}
+      </div>
+    </div>
+  </div>
+</li>

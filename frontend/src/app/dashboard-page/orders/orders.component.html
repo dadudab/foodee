@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>All orders</h1>
+    <div class="back-container" (click)="onNavigateBack()">
+      <img src="/assets/back-arrow.png" alt="" class="logo" />
+      <span>Back</span>
+    </div>
+    <div class="order-list-wrapper">
+      <app-order-list *ngIf="orders" [orders]="orders"></app-order-list>
+    </div>
+  </div>
+</div>

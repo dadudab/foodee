@@ -15,6 +15,8 @@ import { UpdateProductCategoryComponent } from './dashboard-page/update-product-
 import { ProductDetailPageComponent } from './product-detail-page/product-detail-page.component';
 import { ProductListPageComponent } from './product-list-page/product-list-page.component';
 import { FavouritesPageComponent } from './favourites-page/favourites-page.component';
+import { OrdersComponent } from './dashboard-page/orders/orders.component';
+import { MyOrdersComponent } from './dashboard-page/my-orders/my-orders.component';
 
 const routes: Routes = [
   {
@@ -40,6 +42,16 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'dashboard/orders',
+    component: OrdersComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'dashboard/my-orders',
+    component: MyOrdersComponent,
     canActivate: [AuthGuard],
   },
   {
