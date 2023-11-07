@@ -140,10 +140,7 @@ module.exports.removeProductFromCart = async (req, res) => {
     const existingCartProductIndex = foundCart.products.findIndex(
       (product) => product.productId === productId
     );
-
-    // if(existingCartProductIndex === -1) {
-    //   return res.status(200).json(foundCart);
-    // }
+    
     if (existingCartProductIndex > -1) {
       const existingCartProduct = foundCart.products[existingCartProductIndex];
       if (existingCartProduct.quantity <= parseInt(quantity)) {
